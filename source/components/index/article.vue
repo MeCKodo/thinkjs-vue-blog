@@ -74,8 +74,6 @@
         text-align: center;
     }
 
-
-
     .article > time {
         position: absolute;
         top: 0;
@@ -111,12 +109,16 @@
         margin:0 0 25px;
     }
     .article footer {
-        margin:15px 0;
+        margin:25px 0 20px;
     }
     .article footer a {
         display: inline-block;
         color: $color;
         cursor: pointer;
+        padding: 4px 20px;
+        border-radius:5px;
+        @include transition();
+        border:1px solid $color;
          &:hover {
             text-shadow:4px 5px 9px rgba(25, 181, 150, 0.3)
          }
