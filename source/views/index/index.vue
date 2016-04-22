@@ -1,27 +1,37 @@
 <template>
     <div>
-        <h1 class="kodo">首页</h1>
+        <my-header :is-scroll="isScroll"></my-header>
+        <my-article></my-article>
     </div>
 </template>
 <style lang="sass">
-    $color : green;
-    h1 {
-        color: $color;
-    }
-    .k {
-        display: flex;
-    }
+
 </style>
 <script>
-//    import "../../index.css";
+    import myHeader from '../../components/index/header.vue';
+    import myArticle from '../../components/index/article.vue';
     export default{
         data(){
-            return{
-                
+            return {
+                isScroll : false
             }
         },
-        components:{
-            
+        created () {
+            document.addEventListener('scroll',function(e) {
+                var top = document.body.scrollTop;
+                if(top > 250) {
+                    this.isScroll = true;
+                } else {
+                    this.isScroll = false;
+                }
+            }.bind(this));
+        },
+        ready () {
+
+        },
+        components: {
+            myHeader,
+            myArticle
         }
     }
 </script>

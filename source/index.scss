@@ -1,19 +1,90 @@
-body {
-  background: rgba(155,155,155,.1);
+@import "_reset";
+@import "_variables";
 
+body {
+  background: url("http://www.meckodo.com/wp-content/themes/kodo/images/background.png");
 }
 
 .view {
   transition: all .2s ease;
 }
+
 .test-enter {
   opacity: 0;
   transform: translate3d(30px, 0, 0);
 }
+
 .test-leave {
   opacity: 0;
   transform: translate3d(30px, 0, 0);
 }
+
 .v-link-active {
   color: rgb(68, 68, 68);
 }
+
+/*顶部导航开始*/
+.scroll {
+  background: rgba(255, 255, 255, .96);
+}
+.scroll a {
+  color: #999 !important;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  color: #fff;
+  z-index: 9999;
+  nav {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    li {
+      border: 0;
+      display: inline-block;
+      height: 42px;
+      line-height: 42px;
+      position: relative;
+      cursor: pointer;
+      a {
+        display: inline-block;
+        padding: 0 12px;
+        white-space: nowrap;
+        color: #fff;
+        &:hover {
+          color: $color;
+        }
+      }
+    }
+
+    figure {
+      position: absolute;
+      top: 5px;
+      right: 0;
+      height: 42px;
+      line-height: 42px;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      span {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 18px;
+        margin: 0 10px;
+      }
+    }
+
+  }
+}
+
+#bg {
+  max-height: 568px;
+}
+
+/*顶部导航结束*/

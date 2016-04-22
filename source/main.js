@@ -19,7 +19,6 @@ const app = Vue.extend({
         return {}
     },
     ready () {
-        console.log(router);
         console.log("init");
     }
 });
