@@ -10,7 +10,6 @@ export default class extends think.model.mongo {
             badges : badges,
             ctime: new Date()
         });
-
     }
 
 

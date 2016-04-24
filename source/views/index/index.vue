@@ -16,11 +16,7 @@
         created () {
             document.addEventListener('scroll',function(e) {
                 var top = document.body.scrollTop;
-                if(top > 250) {
-                    this.isScroll = true;
-                } else {
-                    this.isScroll = false;
-                }
+                top > 250 ? this.isScroll = true : this.isScroll = false;
             }.bind(this));
         },
         ready () {

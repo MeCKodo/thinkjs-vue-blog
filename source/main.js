@@ -1,12 +1,13 @@
 import './index.scss';
 import Vue from 'vue';
+import $ from 'jquery';
 import myHeader from 'components/index/header.vue';
 import VueRouter from "vue-router";
 import routerMap from "./router";
 Vue.use(VueRouter);
 const router = new VueRouter({});
 routerMap(router);
-
+console.log($);
 const app = Vue.extend({
     el: function () {
         return "html"

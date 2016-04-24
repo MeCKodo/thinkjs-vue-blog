@@ -18,7 +18,7 @@ export default function (router){
                 require(['./views/profile.vue'], resolve);
             }
         },
-        '/article' : {
+        '/article/:id' : {
             name : "article",
             component (resolve) {
                 require(['./views/index/article.vue'], resolve);
@@ -26,7 +26,6 @@ export default function (router){
         }
     });
     router.beforeEach(({to,next}) => {
-        console.log(localStorage.getItem('kodo'));
         if (to.auth) {
             // 对身份进行验证...
             if(localStorage.getItem('kodo')) {

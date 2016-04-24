@@ -9,9 +9,21 @@ export default class extends Base {
      */
     async indexAction() {
         //auto render template file index_index.html
-        var article = await this.model('article').field({_id : 0}).select();
-        console.log(article)
+        var article = await this.model('article').select();
+        article.map( x => {
+            x.badges = JSON.parse(x.badges);
+        });
         this.assign({article : JSON.stringify(article)});
         return this.display();
     }
+    async articleAction() {
+        console.log('------------');
+        var id = this.get('id');
+        console.log(id);
+        var detail = await this.model('article').where({_id:id}).find();
+        console.log(detail);
+        return this.json(detail);
+    }
+
+
 }
