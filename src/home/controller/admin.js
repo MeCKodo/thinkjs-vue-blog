@@ -11,12 +11,11 @@ export default class extends Base {
         //auto render template file index_index.html
         return this.display();
     }
-    async articleAction() {
+    articleAction() {
         let content = this.post('content');
         let title = this.post('title');
         let bg = this.post('bg');
-        console.log(bg);
-        let article = await this.model('article').addArticle(title,content,bg);
+        let article = this.model('article').addArticle(title,content,bg);
         return this.success(0);
     }
 

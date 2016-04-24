@@ -8,20 +8,18 @@ export default class extends Base {
      * @return {Promise} []
      */
     async indexAction() {
-        //auto render template file index_index.html
-        var article = await this.model('article').select();
+        let article = await this.model('article').select();
         article.map( x => {
             x.badges = JSON.parse(x.badges);
         });
         this.assign({article : JSON.stringify(article)});
         return this.display();
     }
+    
     async articleAction() {
-        console.log('------------');
-        var id = this.get('id');
-        console.log(id);
-        var detail = await this.model('article').where({_id:id}).find();
-        console.log(detail);
+        let id = this.get('id');
+        let detail = await this.model('article').where({_id:id}).find();
+            detail.badges = JSON.parse(detail.badges);
         return this.json(detail);
     }
 

@@ -1,14 +1,13 @@
 <template>
     <div id="container">
         <article class="article" v-for="el in articles">
-            <time>4月01日</time>
+            <time v-text="el.ctime"></time>
             <h2><a v-link="'article/'+ el._id +''">{{el.title}}</a></h2>
-            <span><i>#自动化</i> <i>#js</i> <i>#css</i></span>
-            <section class="article-content">
-                <p>我是文章的内容长长长长长长长长长长长长长长长长长长</p>
+            <span><i v-for="badge in el.badges" v-text="'#' + badge + ' '"></i></span>
+            <section class="article-content" v-html="el.content">
             </section>
             <footer>
-                <a>阅读全文</a>
+                <a v-link="'article/'+ el._id +''">阅读全文</a>
             </footer>
         </article>
 

@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-runtime": "6.x.x",
     "jquery": "^2.2.3",
+    "moment": "^2.13.0",
     "thinkjs": "2.1.x",
     "vue": "^1.0.0",
     "vue-router": "^0.7.13"

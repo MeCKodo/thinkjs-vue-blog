@@ -2,13 +2,15 @@
 /**
  * model
  */
+import moment from 'moment';
+
 export default class extends think.model.mongo {
     addArticle(title,content,badges) {
         this.add({
             title : title,
             content: content,
             badges : badges,
-            ctime: new Date()
+            ctime: moment().format('YY年MM月DD日')
         });
     }
 

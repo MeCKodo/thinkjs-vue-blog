@@ -37,6 +37,7 @@
     }
 </style>
 <script>
+
     let badge = [{
         text : "css",
         active : false
@@ -111,7 +112,7 @@
             editor.create();
         },
         methods : {
-            postArticle(){
+            postArticle() {
                 //TODO ajax 提交文章
                 let badges = [];
                 this.badge.forEach(function(item) {

@@ -3,7 +3,9 @@
         <article class="article">
             <time v-html="article.ctime">4月01日</time>
             <h2 v-html="article.title"></h2>
-            <span><i>#自动化</i> <i>#js</i> <i>#css</i></span>
+            <span>
+                <i v-for="el in article.badges">#{{el}} </i>
+            </span>
             <section class="article-content">
                 {{{article.content}}}
                 <strong>转载请注明来源：<a href="">二哲</a></strong>
