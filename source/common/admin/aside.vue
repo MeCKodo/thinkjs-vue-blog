@@ -1,25 +1,44 @@
 <template>
-
-    <!-- 侧边栏内容 -->
-    <div id="doc-oc-demo2" class="am-offcanvas">
-        <div class="am-offcanvas-bar am-offcanvas-bar-flip">
-            <div class="am-offcanvas-content">
-                <a v-link="{ path : el.link}" @click="closeNav" v-for="el in nav">{{el.type}}</a>
-            </div>
-        </div>
-    </div>
+    <aside id="aside">
+        <a class="iconfont" v-for="el in nav" v-link="el.link">{{{el.type}}}</a>
+    </aside>
 </template>
-<style scoped>
-    a {
+<style lang="sass">
+    @import "../../_variables.scss";
+    $asideSize : 55px;
+    #aside {
+        position: fixed;
+        top:0;
+        left:0;
+        width:$asideSize;
+        height:100%;
+        background: #222;
+        color: #fff;
+        z-index:999;
+    }
+    #aside a {
+        height:$asideSize;
+        width:$asideSize;
+        line-height: $asideSize;
+        color: #fff;
+        text-align: center;
+        font-size:22px;
+        font-weight:bold;
+        border-bottom:1px solid #fff;
         display: block;
+        @include transition();
+    }
+    #aside a:hover {
+        color: $color;
+        border-bottom:1px solid $color;
     }
 </style>
 <script>
     let navs = [{
-        type : '首页',
+        type : '&#xe600;',
         link : '/admin'
     },{
-        type : '写小H文咯',
+        type : '&#xe601;',
         link : '/admin/post-new'
     }];
 

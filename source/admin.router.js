@@ -24,6 +24,13 @@ export default function (router){
                 require(['./views/kodo/admin.vue'], resolve);
             },
             subRoutes: {
+                '/': {
+                    // 当匹配到/foo/bar时，会在Foo's <router-view>内渲染
+                    // 一个Bar组件
+                    component (resolve) {
+                        require(['./views/profile.vue'], resolve);
+                    }
+                },
                 '/post-new': {
                     // 当匹配到/foo/bar时，会在Foo's <router-view>内渲染
                     // 一个Bar组件

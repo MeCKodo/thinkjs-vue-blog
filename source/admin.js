@@ -8,17 +8,10 @@ const app = Vue.extend({
     el: function () {
         return "html"
     },
-    route: {
-        data(transition){
-            transition.next();
-        }
-    },
     data () {
         return {}
     },
     ready () {
-        console.log(router);
-        console.log("init");
     }
 });
 

@@ -43,7 +43,7 @@
     export default{
         route : {
             data(transition){
-//                console.log(transition);
+                console.log(transition);
             }
         },
         methods : {

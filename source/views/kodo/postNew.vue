@@ -1,6 +1,6 @@
 <template>
     <article class="am-g">
-        <div id="editor-container" class="am-u-sm-7">
+        <div id="editor-container" class="am-u-sm-6">
             <h3>撰写文章</h3>
             <input type="text" v-model="title" placeholder="文章标题" class="am-form-field am-radius" />
             <div id="editor-trigger"></div>
@@ -13,7 +13,7 @@
             </ul>
             <button class="am-fr am-btn am-round am-btn-secondary" type="button" @click="postArticle">发射!</button>
         </div>
-        <div id="show-content" class="am-u-sm-5">
+        <div id="show-content" class="am-u-sm-6">
             {{{editorContent}}}
         </div>
     </article>
@@ -76,6 +76,38 @@
                 // onchange 事件中更新数据
                 self.editorContent = editor.$txt.html();
             };
+            editor.config.menus = [
+                'source',
+                '|',
+                'bold',
+                'underline',
+                'italic',
+                'strikethrough',
+                'eraser',
+                'forecolor',
+                'bgcolor',
+                '|',
+                'quote',
+                'fontfamily',
+                'fontsize',
+                'head',
+                'unorderlist',
+                'orderlist',
+                'alignleft',
+                'aligncenter',
+                'alignright',
+                '|',
+                'link',
+                'unlink',
+                'table',
+                '|',
+                'img',
+                'insertcode',
+                '|',
+                'undo',
+                'redo',
+                'fullscreen'
+            ];
             editor.create();
         },
         methods : {
