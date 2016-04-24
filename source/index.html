@@ -11,6 +11,11 @@
     <my-header :is-scroll="isScroll"></my-header>
     <router-view class="view" transition="page" transition-mode="out-in"></router-view>
 </div>
+<script>
+    var data = <%-article %>;
+
+    console.log(data);
+</script>
 <script src="/static/index.build.js"></script>
 </body>
 </html>
