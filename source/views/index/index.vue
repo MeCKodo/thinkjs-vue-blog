@@ -1,19 +1,16 @@
 <template>
     <div>
-        <my-header :is-scroll="isScroll"></my-header>
-        <my-article></my-article>
+        <article-list></article-list>
     </div>
 </template>
 <style lang="sass">
 
 </style>
 <script>
-    import myHeader from '../../components/index/header.vue';
-    import myArticle from '../../components/index/article.vue';
+    import ArticleList from '../../components/index/articleList.vue';
     export default{
         data(){
             return {
-                isScroll : false
             }
         },
         created () {
@@ -30,8 +27,7 @@
 
         },
         components: {
-            myHeader,
-            myArticle
+            ArticleList
         }
     }
 </script>

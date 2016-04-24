@@ -2,10 +2,7 @@
     <header id="header" :class="{ 'scroll' : isScroll}">
         <nav>
             <ul>
-                <li><a>里程碑</a></li>
-                <li><a>首页</a></li>
-                <li><a>留言</a></li>
-                <li><a>作品</a></li>
+                <li><a v-for="el in nav" v-link="el.href" v-text="el.title"></a></li>
             </ul>
             <figure>
                 <img src="http://7xim8z.com1.z0.glb.clouddn.com/1.pic.jpg" alt="我的资料" title="我的资料">
@@ -23,19 +20,21 @@
         title: "里程碑",
         href: ""
     }, {
-        title: "里程碑",
+        title: "首页",
+        href: "/"
+    }, {
+        title: "留言板",
         href: ""
     }, {
-        title: "里程碑",
-        href: ""
-    }, {
-        title: "里程碑",
+        title: "作品",
         href: ""
     }];
     export default{
         props : ['is-scroll'],
         data(){
-            return {}
+            return {
+                nav : nav
+            }
         },
         components: {}
     }

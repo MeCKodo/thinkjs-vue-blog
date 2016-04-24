@@ -12,16 +12,16 @@ export default function (router){
                 require(['./views/index/index.vue'], resolve);
             }
         },
-        'profile' : {
+        '/profile' : {
             name : "profile",
             component (resolve) {
                 require(['./views/profile.vue'], resolve);
             }
         },
-        'list' : {
-            name : "list",
+        '/article' : {
+            name : "article",
             component (resolve) {
-                require(['./views/list.vue'], resolve);
+                require(['./views/index/article.vue'], resolve);
             }
         }
     });

@@ -1,25 +1,23 @@
 import './index.scss';
 import Vue from 'vue';
+import myHeader from 'components/index/header.vue';
 import VueRouter from "vue-router";
 import routerMap from "./router";
 Vue.use(VueRouter);
-const router = new VueRouter();
+const router = new VueRouter({});
 routerMap(router);
 
 const app = Vue.extend({
     el: function () {
         return "html"
     },
-    route: {
-        data(transition){
-            transition.next();
+    data () {
+        return {
+            isScroll : false
         }
     },
-    data () {
-        return {}
-    },
-    ready () {
-        console.log("init");
+    components : {
+        myHeader
     }
 });
 
