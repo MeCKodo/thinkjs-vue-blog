@@ -69,6 +69,11 @@
                 badge : badge
             }
         },
+        route: {
+            data() {
+                console.log(1);
+            }
+        },
         ready() {
             var self = this;
             // 创建编辑器

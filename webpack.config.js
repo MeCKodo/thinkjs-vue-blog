@@ -109,7 +109,7 @@ module.exports = {
             js: 'babel'
         }
     },
-    devtool: '#eval-source-map'
+    devtool: '#source-map'
 };
 var vueLoader = {
     js: 'babel',

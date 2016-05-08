@@ -1,2 +1,390 @@
-webpackJsonp([1],[,function(t,e){t.exports=function(){var t=[];return t.toString=function(){for(var t=[],e=0;e<this.length;e++){var o=this[e];o[2]?t.push("@media "+o[2]+"{"+o[1]+"}"):t.push(o[1])}return t.join("")},t.i=function(e,o){"string"==typeof e&&(e=[[null,e,""]]);for(var i={},n=0;n<this.length;n++){var r=this[n][0];"number"==typeof r&&(i[r]=!0)}for(n=0;n<e.length;n++){var a=e[n];"number"==typeof a[0]&&i[a[0]]||(o&&!a[2]?a[2]=o:o&&(a[2]="("+a[2]+") and ("+o+")"),t.push(a))}},t}},function(t,e,o){function i(t,e){for(var o=0;o<t.length;o++){var i=t[o],n=c[i.id];if(n){n.refs++;for(var r=0;r<n.parts.length;r++)n.parts[r](i.parts[r]);for(;r<i.parts.length;r++)n.parts.push(l(i.parts[r],e))}else{for(var a=[],r=0;r<i.parts.length;r++)a.push(l(i.parts[r],e));c[i.id]={id:i.id,refs:1,parts:a}}}}function n(t){for(var e=[],o={},i=0;i<t.length;i++){var n=t[i],r=n[0],a=n[1],s=n[2],l=n[3],p={css:a,media:s,sourceMap:l};o[r]?o[r].parts.push(p):e.push(o[r]={id:r,parts:[p]})}return e}function r(t,e){var o=h(),i=m[m.length-1];if("top"===t.insertAt)i?i.nextSibling?o.insertBefore(e,i.nextSibling):o.appendChild(e):o.insertBefore(e,o.firstChild),m.push(e);else{if("bottom"!==t.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");o.appendChild(e)}}function a(t){t.parentNode.removeChild(t);var e=m.indexOf(t);e>=0&&m.splice(e,1)}function s(t){var e=document.createElement("style");return e.type="text/css",r(t,e),e}function l(t,e){var o,i,n;if(e.singleton){var r=g++;o=x||(x=s(e)),i=p.bind(null,o,r,!1),n=p.bind(null,o,r,!0)}else o=s(e),i=d.bind(null,o),n=function(){a(o)};return i(t),function(e){if(e){if(e.css===t.css&&e.media===t.media&&e.sourceMap===t.sourceMap)return;i(t=e)}else n()}}function p(t,e,o,i){var n=o?"":i.css;if(t.styleSheet)t.styleSheet.cssText=v(e,n);else{var r=document.createTextNode(n),a=t.childNodes;a[e]&&t.removeChild(a[e]),a.length?t.insertBefore(r,a[e]):t.appendChild(r)}}function d(t,e){var o=e.css,i=e.media,n=e.sourceMap;if(i&&t.setAttribute("media",i),n&&(o+="\n/*# sourceURL="+n.sources[0]+" */",o+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(n))))+" */"),t.styleSheet)t.styleSheet.cssText=o;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(o))}}var c={},f=function(t){var e;return function(){return"undefined"==typeof e&&(e=t.apply(this,arguments)),e}},u=f(function(){return/msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase())}),h=f(function(){return document.head||document.getElementsByTagName("head")[0]}),x=null,g=0,m=[];t.exports=function(t,e){e=e||{},"undefined"==typeof e.singleton&&(e.singleton=u()),"undefined"==typeof e.insertAt&&(e.insertAt="bottom");var o=n(t);return i(o,e),function(t){for(var r=[],a=0;a<o.length;a++){var s=o[a],l=c[s.id];l.refs--,r.push(l)}if(t){var p=n(t);i(p,e)}for(var a=0;a<r.length;a++){var l=r[a];if(0===l.refs){for(var d=0;d<l.parts.length;d++)l.parts[d]();delete c[l.id]}}}};var v=function(){var t=[];return function(e,o){return t[e]=o,t.filter(Boolean).join("\n")}}()},,,,,,,,,,,,,,,function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var o=[{type:"&#xe600;",link:"/admin"},{type:"&#xe601;",link:"/admin/post-new"}];e["default"]={data:function(){return{nav:o}},ready:function(){},methods:{closeNav:function(){$("#doc-oc-demo2").offCanvas("close")}},components:{}}},,,,,,function(t,e,o){"use strict";function i(t){return t&&t.__esModule?t:{"default":t}}Object.defineProperty(e,"__esModule",{value:!0});var n=o(53),r=i(n);e["default"]={data:function(){return{}},components:{myAside:r["default"]}}},,,,,,,function(t,e,o){e=t.exports=o(1)(),e.push([t.id,"#aside{position:fixed;top:0;left:0;height:100%;background:#222;z-index:999}#aside,#aside a{width:55px;color:#fff}#aside a{height:55px;line-height:55px;text-align:center;font-size:22px;font-weight:700;border-bottom:1px solid #fff;display:block;-webkit-transition:all .5s;transition:all .5s}#aside a:hover{color:#18bc9c;border-bottom:1px solid #18bc9c}",""])},,,,function(t,e,o){e=t.exports=o(1)(),e.i(o(40),""),e.push([t.id,"",""])},,,function(t,e,o){e=t.exports=o(1)(),e.push([t.id,"@font-face{font-family:iconfont;src:url('//at.alicdn.com/t/font_1461486875_8846307.eot');src:url('//at.alicdn.com/t/font_1461486875_8846307.eot?#iefix') format('embedded-opentype'),url('//at.alicdn.com/t/font_1461486875_8846307.woff') format('woff'),url('//at.alicdn.com/t/font_1461486875_8846307.ttf') format('truetype'),url('//at.alicdn.com/t/font_1461486875_8846307.svg#iconfont') format('svg')}.iconfont{font-family:iconfont;font-size:18px;-webkit-font-smoothing:antialiased;font-weight:400;font-style:normal}",""])},function(t,e,o){e=t.exports=o(1)(),e.push([t.id,'@charset "UTF-8";body,button,h1,h2,h3,h4,h5,h6,i,iframe,img,input,li,ol,p,span,textarea,ul{padding:0;margin:0;-webkit-tap-highlight-color:rgba(255,255,255,0)}address,i{font-style:normal}ol,ul{list-style:none}a{text-decoration:none}b,body,div,fieldset,form,h1,h2,h3,h4,h5,h6,html,p{-webkit-text-size-adjust:none;font-weight:100}article,aside,audio,details,figcaption,figure,footer,header,mark,menu,nav,option,path,section,select,summary,svg,time,video{display:block;margin:0;padding:0;-webkit-tap-highlight-color:rgba(255,255,255,0)}body{font:14px/1.5 aileron,微软雅黑,arial,"sans-serif"}input,select,textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none}button,input:focus,textarea:focus{outline:none;-webkit-tap-highlight-color:rgba(255,255,255,0)}a{color:#333}img{display:block;width:100%}.clearfix:after,.clearfix:before{content:" ";display:table}.clearfix:after{clear:both;overflow:hidden}.clearfix{zoom:1}',""])},function(t,e,o){e=t.exports=o(1)(),e.push([t.id,"$color:#18bc9c;@mixin transition($type:all,$value:.5s){transition:$type $value}",""])},function(t,e,o){e=t.exports=o(1)(),e.i(o(38),""),e.i(o(39),""),e.i(o(37),""),e.push([t.id,'body{background:url("http://www.meckodo.com/wp-content/themes/kodo/images/background.png");overflow-x:hidden}.view{transition:all .2s ease}.page-enter,.page-leave{opacity:0;transform:translate3d(30px,0,0)}.v-link-active{color:#444}.scroll{background:hsla(0,0%,100%,.96);a,span{color:#999!important}}#header{position:fixed;top:0;left:0;width:100%;height:50px;color:#fff;z-index:9999;@include transition(background);nav{width:80%;margin:0 auto;li{border:0;display:inline-block;height:48px;line-height:48px;cursor:pointer;a{display:inline-block;padding:0 12px;white-space:nowrap;color:#fff;&:hover{color:$color}}}figure{position:absolute;top:5px;right:0;height:40px;line-height:40px;img{width:40px;height:40px;border-radius:50%;display:inline-block}span{display:inline-block;vertical-align:top;font-size:18px;margin:0 10px}}}}#bg{max-height:568px}#container{position:relative;max-width:95%;margin:0 auto}.article{position:relative;padding:0 20px;margin:40px auto;max-width:950px;background:#fff;text-align:center}.article>time{position:absolute;top:0;left:0;border-bottom:1px solid #ccc;font-size:14px;padding:4px 5px 0;color:#999}.article>h2{padding:35px 0 25px;font-size:22px;font-weight:700;cursor:pointer}.article>span{position:absolute;top:0;right:0;color:#999;padding:3px 10px;background:#f1f1f1;font-size:14px}.article section{text-align:left;padding:10px;font-size:16px}.article p{margin:0 0 25px}.article footer{padding:25px 0 20px}.article footer a{display:inline-block;color:$color;cursor:pointer;padding:4px 20px;border-radius:5px;@include transition();border:1px solid $color;&:hover{text-shadow:4px 5px 9px rgba(25,181,150,.3)}}',""])},,,function(t,e,o){var i=o(34);"string"==typeof i&&(i=[[t.id,i,""]]);o(2)(i,{});i.locals&&(t.exports=i.locals)},,function(t,e){t.exports='<aside id=aside> <a class=iconfont v-for="el in nav" v-link=el.link>{{{el.type}}}</a> </aside>'},,,,,function(t,e){t.exports='<div> <my-aside></my-aside> <router-view style="padding: 0 0 0 110px" class=view transition=page transition-mode=out-in></router-view> </div>'},,,function(t,e,o){var i,n;o(60),i=o(17),n=o(45),t.exports=i||{},t.exports.__esModule&&(t.exports=t.exports["default"]),n&&(("function"==typeof t.exports?t.exports.options||(t.exports.options={}):t.exports).template=n)},,,,,function(t,e,o){var i,n;o(43),i=o(23),n=o(50),t.exports=i||{},t.exports.__esModule&&(t.exports=t.exports["default"]),n&&(("function"==typeof t.exports?t.exports.options||(t.exports.options={}):t.exports).template=n)},,function(t,e,o){var i=o(30);"string"==typeof i&&(i=[[t.id,i,""]]);o(2)(i,{});i.locals&&(t.exports=i.locals)}]);
+webpackJsonp([1],[
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(8)
+	__vue_script__ = __webpack_require__(12)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] source/common/404.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(13)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "/Users/kodo/WebstormProjects/thinkJsProject/blog/source/common/404.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(9);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(11)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./404.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./404.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(10)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"404.vue","sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+	
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+	
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+	
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+	
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+	
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+	
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+	
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+	
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+	
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+	
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+	
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+	
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+	
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+	
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+	
+		update(obj);
+	
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+	
+	var replaceText = (function () {
+		var textStore = [];
+	
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+	
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+	
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+	
+		if (media) {
+			styleElement.setAttribute("media", media);
+		}
+	
+		if (sourceMap) {
+			// https://developer.chrome.com/devtools/docs/javascript-debugging
+			// this makes source maps inside style tags work properly in Chrome
+			css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */';
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <h1>404啦啦啦</h1>
+	// </template>
+	// <style>
+	//
+	// </style>
+	// <script>
+	
+	exports.default = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    components: {}
+	};
+	// </script>
+	/* generated by vue-loader */
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<h1>404啦啦啦</h1>\n";
+
+/***/ }
+]);
 //# sourceMappingURL=1.js.map

@@ -39,6 +39,9 @@
         link : '/admin'
     },{
         type : '&#xe601;',
+        link : '/admin/article-list'
+    },{
+        type : '&#xe601;',
         link : '/admin/post-new'
     }];
 

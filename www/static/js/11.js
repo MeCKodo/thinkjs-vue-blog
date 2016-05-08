@@ -1,15 +1,6 @@
-webpackJsonp([2],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
+webpackJsonp([11],{
+
+/***/ 10:
 /***/ function(module, exports) {
 
 	/*
@@ -65,7 +56,8 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 11 */
+
+/***/ 11:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -287,19 +279,18 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 12 */,
-/* 13 */,
-/* 14 */
+
+/***/ 68:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(15)
-	__vue_script__ = __webpack_require__(17)
+	__webpack_require__(69)
+	__vue_script__ = __webpack_require__(71)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] source/common/kodo.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(18)
+	  console.warn("[vue-loader] source/views/index/article.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(72)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -309,7 +300,7 @@ webpackJsonp([2],[
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/kodo/WebstormProjects/thinkJsProject/blog/source/common/kodo.vue"
+	  var id = "/Users/kodo/WebstormProjects/thinkJsProject/blog/source/views/index/article.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -318,13 +309,14 @@ webpackJsonp([2],[
 	})()}
 
 /***/ },
-/* 15 */
+
+/***/ 69:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(16);
+	var content = __webpack_require__(70);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(11)(content, {});
@@ -333,8 +325,8 @@ webpackJsonp([2],[
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./kodo.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./kodo.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-720c6550&scoped=true!./../../../node_modules/sass-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./article.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-720c6550&scoped=true!./../../../node_modules/sass-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./article.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -344,7 +336,8 @@ webpackJsonp([2],[
 	}
 
 /***/ },
-/* 16 */
+
+/***/ 70:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(10)();
@@ -352,106 +345,93 @@ webpackJsonp([2],[
 	
 	
 	// module
-	exports.push([module.id, "\n.header {\n    text-align: center;\n}\n", "", {"version":3,"sources":["/./source/common/kodo.vue?671de344"],"names":[],"mappings":";AAqCA;IACA,mBAAA;CACA","file":"kodo.vue","sourcesContent":["<template>\n    <article>\n        <div class=\"header\">\n            <div class=\"am-g\">\n                <h1>你的房间</h1>\n                <p>Integrated Development Environment<br/>代码编辑，代码生成，界面设计，调试，编译</p>\n            </div>\n            <hr />\n        </div>\n\n        <div class=\"am-g\">\n            <div class=\"am-u-lg-6 am-u-md-8 am-u-sm-centered\">\n                <form class=\"am-form\">\n                    <label >主人:</label>\n                    <input type=\"text\" name=\"\" v-model=\"username\"  value=\"\">\n                    <br>\n                    <label >暗号:</label>\n                    <input type=\"password\" name=\"\" v-model=\"pwd\"  value=\"\">\n                    <br>\n                    <label for=\"remember-me\">\n                        <input id=\"remember-me\" type=\"checkbox\">\n                        记住密码\n                    </label>\n                    <br />\n                    <div class=\"am-cf\">\n                        <input type=\"submit\" @click=\"login\" name=\"\" value=\"登 录\" class=\"am-btn am-btn-primary am-btn-sm am-fl\">\n                        <input type=\"submit\" name=\"\" value=\"忘记密码 ^_^? \" class=\"am-btn am-btn-default am-btn-sm am-fr\">\n                    </div>\n                </form>\n                <hr>\n                <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p>\n            </div>\n        </div>\n    </article>\n\n</template>\n<style>\n    .header {\n        text-align: center;\n    }\n</style>\n<script>\n    export default{\n        route : {\n            data(transition){\n                console.log(transition);\n            }\n        },\n        data() {\n            return {\n                username : '',\n                pwd : ''\n            }\n        },\n        methods : {\n            login(){\n                let _this = this;\n                $.ajax({\n                    url : \"/kodo/login/index\",\n                    type : \"POST\",\n                    data : {\n                        username : this.username,\n                        pwd : this.pwd\n                    },\n                    success(ret) {\n                        if(ret.errcode === 0) {\n                            _this.$route.router.go('admin');\n                        } else {\n                            alert(ret.msg);\n                        }\n                    },\n                    error(){\n\n                    }\n                })\n            }\n        }\n    }\n</script>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".article strong[_v-720c6550] {\n  display: block;\n  font-size: 12px;\n  text-align: right;\n  color: #666; }\n  .article strong a[_v-720c6550] {\n    color: #999; }\n", "", {"version":3,"sources":["/./source/views/index/article.vue"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,gBAAgB;EAChB,kBAAkB;EAClB,YAAY,EAAE;EACd;IACE,YAAY,EAAE","file":"article.vue","sourcesContent":[".article strong {\n  display: block;\n  font-size: 12px;\n  text-align: right;\n  color: #666; }\n  .article strong a {\n    color: #999; }\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 17 */
-/***/ function(module, exports) {
 
-	'use strict';
+/***/ 71:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template>
-	//     <article>
-	//         <div class="header">
-	//             <div class="am-g">
-	//                 <h1>你的房间</h1>
-	//                 <p>Integrated Development Environment<br/>代码编辑，代码生成，界面设计，调试，编译</p>
-	//             </div>
-	//             <hr />
-	//         </div>
-	//
-	//         <div class="am-g">
-	//             <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
-	//                 <form class="am-form">
-	//                     <label >主人:</label>
-	//                     <input type="text" name="" v-model="username"  value="">
-	//                     <br>
-	//                     <label >暗号:</label>
-	//                     <input type="password" name="" v-model="pwd"  value="">
-	//                     <br>
-	//                     <label for="remember-me">
-	//                         <input id="remember-me" type="checkbox">
-	//                         记住密码
-	//                     </label>
-	//                     <br />
-	//                     <div class="am-cf">
-	//                         <input type="submit" @click="login" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
-	//                         <input type="submit" name="" value="忘记密码 ^_^? " class="am-btn am-btn-default am-btn-sm am-fr">
-	//                     </div>
-	//                 </form>
-	//                 <hr>
-	//                 <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
-	//             </div>
-	//         </div>
-	//     </article>
-	//
-	// </template>
-	// <style>
-	//     .header {
-	//         text-align: center;
-	//     }
-	// </style>
-	// <script>
+	
+	var _jquery = __webpack_require__(5);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	exports.default = {
-	    route: {
-	        data: function data(transition) {
-	            console.log(transition);
-	        }
-	    },
 	    data: function data() {
 	        return {
-	            username: '',
-	            pwd: ''
+	            article: null
 	        };
 	    },
 	
-	    methods: {
-	        login: function login() {
-	            var _this = this;
-	            $.ajax({
-	                url: "/kodo/login/index",
-	                type: "POST",
-	                data: {
-	                    username: this.username,
-	                    pwd: this.pwd
-	                },
+	    route: {
+	        data: function data(transiton) {
+	            _jquery2.default.ajax({
+	                url: "/index/article/?id=" + this.$route.params.id,
 	                success: function success(ret) {
-	                    if (ret.errcode === 0) {
-	                        _this.$route.router.go('admin');
-	                    } else {
-	                        alert(ret.msg);
-	                    }
+	                    transiton.next({
+	                        article: ret
+	                    });
 	                },
-	                error: function error() {}
+	                error: function error() {
+	                    //                        alert('网络异常');
+	                    //                        window.location.reload();
+	                }
 	            });
 	        }
-	    }
+	    },
+	    components: {}
 	};
 	// </script>
 	/* generated by vue-loader */
+	// <template>
+	//     <div id="container">
+	//         <article class="article">
+	//             <time v-html="article.ctime"></time>
+	//             <h2 v-html="article.title"></h2>
+	//             <span>
+	//                 <i v-for="el in article.badges">#{{el}} </i>
+	//             </span>
+	//             <section class="article-content">
+	//                 {{{article.content}}}
+	//                 <strong>转载请注明来源：<a>二哲</a></strong>
+	//             </section>
+	//
+	//         </article>
+	//     </div>
+	// </template>
+	// <style lang="sass" scoped>
+	//     .article strong {
+	//         display: block;
+	//         font-size:12px;
+	//         text-align: right;
+	//         color: #666;
+	//         a {
+	//             color : #999;
+	//         }
+	//     }
+	//
+	// </style>
+	// <script>
 
 /***/ },
-/* 18 */
+
+/***/ 72:
 /***/ function(module, exports) {
 
-	module.exports = "\n<article>\n    <div class=\"header\">\n        <div class=\"am-g\">\n            <h1>你的房间</h1>\n            <p>Integrated Development Environment<br/>代码编辑，代码生成，界面设计，调试，编译</p>\n        </div>\n        <hr />\n    </div>\n\n    <div class=\"am-g\">\n        <div class=\"am-u-lg-6 am-u-md-8 am-u-sm-centered\">\n            <form class=\"am-form\">\n                <label >主人:</label>\n                <input type=\"text\" name=\"\" v-model=\"username\"  value=\"\">\n                <br>\n                <label >暗号:</label>\n                <input type=\"password\" name=\"\" v-model=\"pwd\"  value=\"\">\n                <br>\n                <label for=\"remember-me\">\n                    <input id=\"remember-me\" type=\"checkbox\">\n                    记住密码\n                </label>\n                <br />\n                <div class=\"am-cf\">\n                    <input type=\"submit\" @click=\"login\" name=\"\" value=\"登 录\" class=\"am-btn am-btn-primary am-btn-sm am-fl\">\n                    <input type=\"submit\" name=\"\" value=\"忘记密码 ^_^? \" class=\"am-btn am-btn-default am-btn-sm am-fr\">\n                </div>\n            </form>\n            <hr>\n            <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p>\n        </div>\n    </div>\n</article>\n\n";
+	module.exports = "\n<div id=\"container\" _v-720c6550=\"\">\n    <article class=\"article\" _v-720c6550=\"\">\n        <time v-html=\"article.ctime\" _v-720c6550=\"\"></time>\n        <h2 v-html=\"article.title\" _v-720c6550=\"\"></h2>\n        <span _v-720c6550=\"\">\n            <i v-for=\"el in article.badges\" _v-720c6550=\"\">#{{el}} </i>\n        </span>\n        <section class=\"article-content\" _v-720c6550=\"\">\n            {{{article.content}}}\n            <strong _v-720c6550=\"\">转载请注明来源：<a _v-720c6550=\"\">二哲</a></strong>\n        </section>\n\n    </article>\n</div>\n";
 
 /***/ }
-]);
-//# sourceMappingURL=2.js.map
+
+});
+//# sourceMappingURL=11.js.map

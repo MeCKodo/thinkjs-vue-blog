@@ -11,11 +11,11 @@
         <div class="am-g">
             <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
                 <form class="am-form">
-                    <label for="email">主人:</label>
-                    <input type="email" name="" id="email" value="">
+                    <label >主人:</label>
+                    <input type="text" name="" v-model="username"  value="">
                     <br>
-                    <label for="password">暗号:</label>
-                    <input type="password" name="" id="password" value="">
+                    <label >暗号:</label>
+                    <input type="password" name="" v-model="pwd"  value="">
                     <br>
                     <label for="remember-me">
                         <input id="remember-me" type="checkbox">
@@ -46,10 +46,33 @@
                 console.log(transition);
             }
         },
+        data() {
+            return {
+                username : '',
+                pwd : ''
+            }
+        },
         methods : {
             login(){
-                localStorage.setItem('kodo', 1);
-                this.$router.go({name: "admin"});
+                let _this = this;
+                $.ajax({
+                    url : "/kodo/login/index",
+                    type : "POST",
+                    data : {
+                        username : this.username,
+                        pwd : this.pwd
+                    },
+                    success(ret) {
+                        if(ret.errcode === 0) {
+                            _this.$route.router.go('admin');
+                        } else {
+                            alert(ret.msg);
+                        }
+                    },
+                    error(){
+
+                    }
+                })
             }
         }
     }

@@ -1,14 +1,14 @@
 <template>
     <div id="container">
         <article class="article">
-            <time v-html="article.ctime">4月01日</time>
+            <time v-html="article.ctime"></time>
             <h2 v-html="article.title"></h2>
             <span>
                 <i v-for="el in article.badges">#{{el}} </i>
             </span>
             <section class="article-content">
                 {{{article.content}}}
-                <strong>转载请注明来源：<a href="">二哲</a></strong>
+                <strong>转载请注明来源：<a>二哲</a></strong>
             </section>
 
         </article>

@@ -9,6 +9,7 @@ export default class extends Base {
      */
     async indexAction() {
         let article = await this.model('article').select();
+        // await this.session(); 测试清除登入session
         article.map( x => {
             x.badges = JSON.parse(x.badges);
         });
@@ -22,6 +23,6 @@ export default class extends Base {
             detail.badges = JSON.parse(detail.badges);
         return this.json(detail);
     }
-
+    
 
 }

@@ -1,61 +1,4 @@
-webpackJsonp([6],{
-
-/***/ 10:
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-	
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-	
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
+webpackJsonp([10],{
 
 /***/ 11:
 /***/ function(module, exports, __webpack_require__) {
@@ -280,17 +223,17 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 46:
+/***/ 33:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(47)
-	__vue_script__ = __webpack_require__(49)
+	__webpack_require__(34)
+	__vue_script__ = __webpack_require__(36)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] source/views/kodo/articleList.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(50)
+	  console.warn("[vue-loader] source/views/profile.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(37)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -300,7 +243,7 @@ webpackJsonp([6],{
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/kodo/WebstormProjects/thinkJsProject/blog/source/views/kodo/articleList.vue"
+	  var id = "/Users/kodo/WebstormProjects/thinkJsProject/blog/source/views/profile.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -310,13 +253,13 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 47:
+/***/ 34:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(48);
+	var content = __webpack_require__(35);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(11)(content, {});
@@ -325,8 +268,8 @@ webpackJsonp([6],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./articleList.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./articleList.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./profile.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./profile.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -337,7 +280,7 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 48:
+/***/ 35:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(10)();
@@ -345,14 +288,14 @@ webpackJsonp([6],{
 	
 	
 	// module
-	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"articleList.vue","sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"profile.vue","sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 49:
+/***/ 36:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -361,13 +304,7 @@ webpackJsonp([6],{
 	    value: true
 	});
 	// <template>
-	//     <article>
-	//         <ul>
-	//             <li><a>1</a></li>
-	//             <li><a>2</a></li>
-	//             <li><a>3</a></li>
-	//         </ul>
-	//     </article>
+	//     <h1>我是profile页面</h1>
 	// </template>
 	// <style>
 	//
@@ -386,12 +323,12 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 50:
+/***/ 37:
 /***/ function(module, exports) {
 
-	module.exports = "\n<article>\n    <ul>\n        <li><a>1</a></li>\n        <li><a>2</a></li>\n        <li><a>3</a></li>\n    </ul>\n</article>\n";
+	module.exports = "\n<h1>我是profile页面</h1>\n";
 
 /***/ }
 
 });
-//# sourceMappingURL=6.js.map
+//# sourceMappingURL=10.js.map
