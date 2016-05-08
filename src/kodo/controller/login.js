@@ -7,7 +7,7 @@ export default class extends think.controller.base {
    * index action
    * @return {Promise} []
    */
-  async indexAction(){
+  async indexAction(){ // 登录按钮
     let username = this.post('username');
     let pwd = this.post('pwd');
 
@@ -27,7 +27,7 @@ export default class extends think.controller.base {
       userInfo : userInfo
     })
   }
-  async statusAction() {
+  async statusAction() { // router.before 每次的判断
     let userInfo = await this.session('userInfo');
     console.log(userInfo);
     if(userInfo) {

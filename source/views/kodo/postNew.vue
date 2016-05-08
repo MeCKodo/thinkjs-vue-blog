@@ -125,7 +125,7 @@
                         badges.push(item.text);
                 });
                 $.ajax({
-                    url: "/admin/article",
+                    url: "/kodo/article/add",
                     type : "POST",
                     data: {
                         title : this.title,

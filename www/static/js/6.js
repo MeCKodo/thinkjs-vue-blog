@@ -363,9 +363,7 @@ webpackJsonp([6],{
 	// <template>
 	//     <article>
 	//         <ul>
-	//             <li><a>1</a></li>
-	//             <li><a>2</a></li>
-	//             <li><a>3</a></li>
+	//             <li v-for="el in arts"><a>{{el.title}}</a></li>
 	//         </ul>
 	//     </article>
 	// </template>
@@ -376,9 +374,24 @@ webpackJsonp([6],{
 	
 	exports.default = {
 	    data: function data() {
-	        return {};
+	        return {
+	            arts: null
+	        };
 	    },
 	
+	    route: {
+	        data: function data(transition) {
+	            $.ajax({
+	                url: "/kodo/article/list",
+	                success: function success(ret) {
+	                    transition.next({
+	                        arts: ret.arts
+	                    });
+	                },
+	                error: function error() {}
+	            });
+	        }
+	    },
 	    components: {}
 	};
 	// </script>
@@ -389,7 +402,7 @@ webpackJsonp([6],{
 /***/ 50:
 /***/ function(module, exports) {
 
-	module.exports = "\n<article>\n    <ul>\n        <li><a>1</a></li>\n        <li><a>2</a></li>\n        <li><a>3</a></li>\n    </ul>\n</article>\n";
+	module.exports = "\n<article>\n    <ul>\n        <li v-for=\"el in arts\"><a>{{el.title}}</a></li>\n    </ul>\n</article>\n";
 
 /***/ }
 

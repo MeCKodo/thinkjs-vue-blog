@@ -1,25 +1,37 @@
 <template>
     <article>
         <ul>
-            <li><a>1</a></li>
-            <li><a>2</a></li>
-            <li><a>3</a></li>
+            <li v-for="el in arts"><a>{{el.title}}</a></li>
         </ul>
     </article>
 </template>
 <style>
-    
+
 </style>
 <script>
-    
+
     export default{
         data(){
-            return{
-                
+            return {
+                arts : null
             }
         },
-        components:{
-            
-        }
+        route: {
+            data(transition) {
+                $.ajax({
+                    url: "/kodo/article/list",
+                    success(ret) {
+                        transition.next({
+                            arts: ret.arts
+                        })
+
+                    },
+                    error() {
+
+                    }
+                })
+            }
+        },
+        components: {}
     }
 </script>
