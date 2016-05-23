@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 10:
+/***/ 34:
 /***/ function(module, exports) {
 
 	/*
@@ -57,7 +57,7 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 11:
+/***/ 35:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -280,17 +280,17 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 46:
+/***/ 71:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(47)
-	__vue_script__ = __webpack_require__(49)
+	__webpack_require__(72)
+	__vue_script__ = __webpack_require__(74)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] source/views/kodo/articleList.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(50)
+	__vue_template__ = __webpack_require__(75)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -310,16 +310,16 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 47:
+/***/ 72:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(48);
+	var content = __webpack_require__(73);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(11)(content, {});
+	var update = __webpack_require__(35)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -337,10 +337,10 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 48:
+/***/ 73:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(10)();
+	exports = module.exports = __webpack_require__(34)();
 	// imports
 	
 	
@@ -352,7 +352,7 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 49:
+/***/ 74:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -362,6 +362,8 @@ webpackJsonp([6],{
 	});
 	// <template>
 	//     <article>
+	//
+	//         <h3>文章列表</h3>
 	//         <ul>
 	//             <li v-for="el in arts"><a>{{el.title}}</a></li>
 	//         </ul>
@@ -399,10 +401,10 @@ webpackJsonp([6],{
 
 /***/ },
 
-/***/ 50:
+/***/ 75:
 /***/ function(module, exports) {
 
-	module.exports = "\n<article>\n    <ul>\n        <li v-for=\"el in arts\"><a>{{el.title}}</a></li>\n    </ul>\n</article>\n";
+	module.exports = "\n<article>\n\n    <h3>文章列表</h3>\n    <ul>\n        <li v-for=\"el in arts\"><a>{{el.title}}</a></li>\n    </ul>\n</article>\n";
 
 /***/ }
 

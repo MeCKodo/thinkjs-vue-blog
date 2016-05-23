@@ -4,10 +4,10 @@
             <time v-html="article.ctime"></time>
             <h2 v-html="article.title"></h2>
             <span>
-                <i v-for="el in article.badges">#{{el}} </i>
+                <i v-for="el in article.badges" v-text="'#' + el"></i>
             </span>
             <section class="article-content">
-                {{{article.content}}}
+                {{{decodeURIComponent(article.content)}}}
                 <strong>转载请注明来源：<a>二哲</a></strong>
             </section>
 
@@ -28,10 +28,16 @@
 </style>
 <script>
     import $ from 'jquery';
+    import prism from 'prismjs';
     export default{
         data(){
             return {
-                article : null
+                article : {
+                    ctime : null,
+                    title : null,
+                    content : null,
+                    badges : null
+                }
             }
         },
         route : {
@@ -49,6 +55,15 @@
                     }
                 });
             }
+        },
+        ready(){
+            setTimeout(function() {
+                prism.highlightAll(false,function() {
+                    console.log('ok')
+                });
+                console.log(prism);
+            },50)
+
         },
         components:{
             

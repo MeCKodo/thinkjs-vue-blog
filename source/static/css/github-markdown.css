@@ -480,7 +480,7 @@
 .markdown-body code:before,
 .markdown-body code:after {
     letter-spacing: -0.2em;
-    content: "\A0";
+    content: "\00a0";
 }
 
 .markdown-body pre>code {
@@ -693,5 +693,3 @@
 .markdown-body hr {
     border-bottom-color: #eee;
 }
-
-/*# sourceMappingURL=admin.css.map*/

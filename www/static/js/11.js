@@ -1,63 +1,6 @@
 webpackJsonp([11],{
 
-/***/ 10:
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-	
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-	
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
-
-/***/ 11:
+/***/ 35:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -280,17 +223,17 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 68:
+/***/ 57:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(69)
-	__vue_script__ = __webpack_require__(71)
+	__webpack_require__(58)
+	__vue_script__ = __webpack_require__(60)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] source/views/index/article.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(72)
+	  console.warn("[vue-loader] source/views/profile.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(61)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -300,7 +243,7 @@ webpackJsonp([11],{
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/kodo/WebstormProjects/thinkJsProject/blog/source/views/index/article.vue"
+	  var id = "/Users/kodo/WebstormProjects/thinkJsProject/blog/source/views/profile.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -310,23 +253,23 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 69:
+/***/ 58:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(70);
+	var content = __webpack_require__(59);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(11)(content, {});
+	var update = __webpack_require__(35)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-720c6550&scoped=true!./../../../node_modules/sass-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./article.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-720c6550&scoped=true!./../../../node_modules/sass-loader/index.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./article.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./profile.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./profile.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -337,99 +280,53 @@ webpackJsonp([11],{
 
 /***/ },
 
-/***/ 70:
+/***/ 59:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(10)();
+	exports = module.exports = __webpack_require__(34)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".article strong[_v-720c6550] {\n  display: block;\n  font-size: 12px;\n  text-align: right;\n  color: #666; }\n  .article strong a[_v-720c6550] {\n    color: #999; }\n", "", {"version":3,"sources":["/./source/views/index/article.vue"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,gBAAgB;EAChB,kBAAkB;EAClB,YAAY,EAAE;EACd;IACE,YAAY,EAAE","file":"article.vue","sourcesContent":[".article strong {\n  display: block;\n  font-size: 12px;\n  text-align: right;\n  color: #666; }\n  .article strong a {\n    color: #999; }\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"profile.vue","sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
 
-/***/ 71:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 60:
+/***/ function(module, exports) {
 
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	
-	var _jquery = __webpack_require__(5);
-	
-	var _jquery2 = _interopRequireDefault(_jquery);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	// <template>
+	//     <h1>我是profile页面</h1>
+	// </template>
+	// <style>
+	//
+	// </style>
+	// <script>
 	
 	exports.default = {
 	    data: function data() {
-	        return {
-	            article: null
-	        };
+	        return {};
 	    },
 	
-	    route: {
-	        data: function data(transiton) {
-	            _jquery2.default.ajax({
-	                url: "/index/article/?id=" + this.$route.params.id,
-	                success: function success(ret) {
-	                    transiton.next({
-	                        article: ret
-	                    });
-	                },
-	                error: function error() {
-	                    //                        alert('网络异常');
-	                    //                        window.location.reload();
-	                }
-	            });
-	        }
-	    },
 	    components: {}
 	};
 	// </script>
 	/* generated by vue-loader */
-	// <template>
-	//     <div id="container">
-	//         <article class="article">
-	//             <time v-html="article.ctime"></time>
-	//             <h2 v-html="article.title"></h2>
-	//             <span>
-	//                 <i v-for="el in article.badges">#{{el}} </i>
-	//             </span>
-	//             <section class="article-content">
-	//                 {{{article.content}}}
-	//                 <strong>转载请注明来源：<a>二哲</a></strong>
-	//             </section>
-	//
-	//         </article>
-	//     </div>
-	// </template>
-	// <style lang="sass" scoped>
-	//     .article strong {
-	//         display: block;
-	//         font-size:12px;
-	//         text-align: right;
-	//         color: #666;
-	//         a {
-	//             color : #999;
-	//         }
-	//     }
-	//
-	// </style>
-	// <script>
 
 /***/ },
 
-/***/ 72:
+/***/ 61:
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"container\" _v-720c6550=\"\">\n    <article class=\"article\" _v-720c6550=\"\">\n        <time v-html=\"article.ctime\" _v-720c6550=\"\"></time>\n        <h2 v-html=\"article.title\" _v-720c6550=\"\"></h2>\n        <span _v-720c6550=\"\">\n            <i v-for=\"el in article.badges\" _v-720c6550=\"\">#{{el}} </i>\n        </span>\n        <section class=\"article-content\" _v-720c6550=\"\">\n            {{{article.content}}}\n            <strong _v-720c6550=\"\">转载请注明来源：<a _v-720c6550=\"\">二哲</a></strong>\n        </section>\n\n    </article>\n</div>\n";
+	module.exports = "\n<h1>我是profile页面</h1>\n";
 
 /***/ }
 

@@ -8,7 +8,7 @@ export default class extends think.model.mongo {
     addArticle(title,content,badges) {
         this.add({
             title : title,
-            content: content,
+            content: encodeURIComponent(content),
             badges : badges,
             ctime: moment().format('YY年MM月DD日')
         });

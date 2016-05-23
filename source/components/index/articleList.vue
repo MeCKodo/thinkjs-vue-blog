@@ -4,7 +4,7 @@
             <time v-text="el.ctime"></time>
             <h2><a v-link="'article/'+ el._id +''">{{el.title}}</a></h2>
             <span><i v-for="badge in el.badges" v-text="'#' + badge + ' '"></i></span>
-            <section class="article-content" v-html="el.content">
+            <section class="article-content" v-html="decodeURIComponent(el.content)">
             </section>
             <footer>
                 <a v-link="'article/'+ el._id +''">阅读全文</a>
@@ -15,15 +15,17 @@
 </template>
 <style lang="sass">
 
-
 </style>
 <script>
-
+    import prism from 'prismjs';
     export default{
         data(){
             return {
                 articles : $data
             }
+        },
+        ready() {
+            prism.highlightAll(false);
         },
         components: {}
     }

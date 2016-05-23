@@ -1,6 +1,6 @@
-webpackJsonp([4],{
+webpackJsonp([13,4],{
 
-/***/ 34:
+/***/ 10:
 /***/ function(module, exports) {
 
 	/*
@@ -57,7 +57,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 35:
+/***/ 11:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -280,17 +280,17 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 57:
+/***/ 33:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(58)
-	__vue_script__ = __webpack_require__(60)
+	__webpack_require__(34)
+	__vue_script__ = __webpack_require__(36)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] source/views/profile.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(61)
+	__vue_template__ = __webpack_require__(37)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -310,16 +310,16 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 58:
+/***/ 34:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(59);
+	var content = __webpack_require__(35);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(35)(content, {});
+	var update = __webpack_require__(11)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -337,10 +337,10 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 59:
+/***/ 35:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(34)();
+	exports = module.exports = __webpack_require__(10)();
 	// imports
 	
 	
@@ -352,7 +352,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 60:
+/***/ 36:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -380,7 +380,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 61:
+/***/ 37:
 /***/ function(module, exports) {
 
 	module.exports = "\n<h1>我是profile页面</h1>\n";
@@ -388,4 +388,4 @@ webpackJsonp([4],{
 /***/ }
 
 });
-//# sourceMappingURL=4.js.map
+//# sourceMappingURL=13.js.map
