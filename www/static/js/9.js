@@ -413,18 +413,9 @@ webpackJsonp([9],{
 	    },
 	
 	    route: {
-	        data: function data(transiton) {
-	            _jquery2.default.ajax({
-	                url: "/index/article/?id=" + this.$route.params.id,
-	                success: function success(ret) {
-	                    transiton.next({
-	                        article: ret
-	                    });
-	                },
-	                error: function error() {
-	                    //                        alert('网络异常');
-	                    //                        window.location.reload();
-	                }
+	        data: function data() {
+	            this.$http.get('/index/article/id/' + this.$route.params.id).then(function (ret) {
+	                this.article = ret.data;
 	            });
 	        }
 	    },

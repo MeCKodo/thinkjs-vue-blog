@@ -8,7 +8,7 @@
             </section>
             <section>
                 <h3>文章内容</h3>
-                <textarea placeholder="今天,我想说的是..." v-model="editorContent"></textarea>
+                <textarea placeholder="今天,我想说的是..." @input="markRender" v-model="editorContent"></textarea>
             </section>
             <!--<div id="editor-trigger"></div>-->
             <ul>
@@ -19,6 +19,7 @@
                 >{{el.text}}</li>
             </ul>
             <button class="am-fr am-btn am-round am-btn-secondary" type="button" @click="postArticle">发射!</button>
+            <button class="am-fr am-btn am-round am-btn-secondary" type="button" @click="delete">删除</button>
         </div>
         <div id="show-content" class="am-u-sm-6">
             {{{editorContent | marked}}}
@@ -61,7 +62,7 @@
 </style>
 <script>
     import marked from 'marked';
-
+    import prism from 'prismjs';
     let badge = [{
         text : "css",
         active : false
@@ -95,6 +96,12 @@
         },
         route: {
             data() {
+                if(!this.$route.params.id) return;
+                this.$http.get('/kodo/article/detail/id/' + this.$route.params.id)
+                    .then(function(ret) {
+                        this.title = ret.data.title;
+                        this.editorContent = decodeURIComponent(ret.data.content);
+                    });
 
             }
         },
@@ -102,46 +109,9 @@
             marked: marked
         },
         ready() {
-            var self = this;
-            // 创建编辑器
-            /*var editor = new wangEditor('editor-trigger');
-            editor.onchange = function () {
-                // onchange 事件中更新数据
-                self.editorContent = editor.$txt.html();
-            };
-            editor.config.menus = [
-                'source',
-                '|',
-                'bold',
-                'underline',
-                'italic',
-                'strikethrough',
-                'eraser',
-                'forecolor',
-                'bgcolor',
-                '|',
-                'quote',
-                'fontfamily',
-                'fontsize',
-                'head',
-                'unorderlist',
-                'orderlist',
-                'alignleft',
-                'aligncenter',
-                'alignright',
-                '|',
-                'link',
-                'unlink',
-                'table',
-                '|',
-                'img',
-                'insertcode',
-                '|',
-                'undo',
-                'redo',
-                'fullscreen'
-            ];
-            editor.create();*/
+            setTimeout(function() {
+                prism.highlightAll(false);
+            },50)
         },
         methods : {
             postArticle() {
@@ -151,32 +121,48 @@
                     if(item.active)
                         badges.push(item.text);
                 });
-                $.ajax({
-                    url: "/kodo/article/add",
-                    type : "POST",
-                    data: {
-                        title : this.title,
-                        content: $("#show-content").html(),
-                        bg : JSON.stringify(badges)
-                    },
-                    success(data){
-                        console.log(data)
-                    },
-                    error(){
-                        console.log('出错');
-                    }
-                });
-            },
-            test (e) {
-                this.editorContent = e.target.innerHTML;
+                if(this.$route.params.id) {
+                    update(this,this.$route.params.id)
+                } else {
+                    create(this);
+                }
 
+            },
+            markRender () {//实时渲染markdown
+                prism.highlightAll(false);
             },
             choiceBadge(idx){
                 this.badge[idx].active ? this.badge[idx].active = false : this.badge[idx].active = true;
+            },
+            delete() {
+                if(!confirm('确认删除吗?')) return;
+                this.$http.post("/kodo/article/delete",{
+                    id : this.$route.params.id
+                }).then(function(ret) {
+                    alert('更新成功');
+                })
             }
         },
         components:{
             
         }
+    } 
+    function update(v,id) {
+        v.$http.post("/kodo/article/update",{
+            id : id,
+            title : v.title,
+            content: v.editorContent
+        }).then(function(ret) {
+            alert('更新成功');
+        })
+    }
+    function create(v) {
+        v.$http.post("/kodo/article/add",{
+            title : v.title,
+            content: v.editorContent,
+            bg : JSON.stringify(v.badges)
+        }).then(function(ret) {
+            alert('发射成功');
+        })
     }
 </script>

@@ -30,7 +30,12 @@ export default function (router) {
                         require(['./views/profile.vue'], resolve);
                     }
                 },
-                '/post-new': {
+                '/post-new/': {
+                    component (resolve) {
+                        require(['./views/kodo/postNew.vue'], resolve);
+                    }
+                },
+                'update/:id' : {
                     component (resolve) {
                         require(['./views/kodo/postNew.vue'], resolve);
                     }

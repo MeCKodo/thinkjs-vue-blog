@@ -1,4 +1,4 @@
-webpackJsonp([6],{
+webpackJsonp([19],{
 
 /***/ 34:
 /***/ function(module, exports) {
@@ -360,8 +360,14 @@ webpackJsonp([6],{
 	            }, 0);
 	        },
 	        detail: function detail() {
-	            this.$http.get('/kodo/article/detail/id/' + this.detailId).then(function (ret) {
-	                console.log(ret.data);
+	            this.$route.router.go('/admin/update/' + this.detailId);
+	        },
+	        delete: function _delete() {
+	            if (!confirm('确认删除吗?')) return;
+	            this.$http.post("/kodo/article/delete", {
+	                id: this.detailId
+	            }).then(function (ret) {
+	                window.location.reload();
 	            });
 	        }
 	    }
@@ -377,7 +383,7 @@ webpackJsonp([6],{
 	//             </ul>
 	//         </aside>
 	//         <section>
-	//             <header @click="detail">编辑</header>
+	//             <header><span @click="detail">编辑</span><span @click="delete">删除</span></header>
 	//             {{{decodeURIComponent(content)}}}
 	//         </section>
 	//     </article>
@@ -1235,7 +1241,7 @@ webpackJsonp([6],{
 	
 	
 	// module
-	exports.push([module.id, "\narticle[_v-c04e6376] {\n    background: #fff;\n    border-radius: 5px;\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n}\naside[_v-c04e6376] {\n    padding: 15px 0;\n    -webkit-box-flex: 1;\n    -webkit-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\naside h2[_v-c04e6376] {\n    text-align: center;\n    padding:0 0 10px;\n    border-bottom: 1px solid #ccc;\n}\naside li[_v-c04e6376] {\n    color: #333;\n    padding:10px;\n    cursor: pointer;\n}\naside li.active[_v-c04e6376] {\n    background: #F0F3F1;\n\n}\nsection[_v-c04e6376] {\n    padding: 15px 25px;\n    border-left: 1px solid #ccc;\n    -webkit-box-flex: 4;\n    -webkit-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n}\n", "", {"version":3,"sources":["/./source/views/kodo/articleList.vue?2ee75f5c"],"names":[],"mappings":";AAeA;IACA,iBAAA;IACA,mBAAA;IACA,qBAAA;IAAA,sBAAA;IAAA,qBAAA;IAAA,cAAA;CACA;AACA;IACA,gBAAA;IACA,oBAAA;IAAA,gBAAA;QAAA,YAAA;YAAA,QAAA;CACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,8BAAA;CACA;AACA;IACA,YAAA;IACA,aAAA;IACA,gBAAA;CACA;AACA;IACA,oBAAA;;CAEA;AACA;IACA,mBAAA;IACA,4BAAA;IACA,oBAAA;IAAA,gBAAA;QAAA,YAAA;YAAA,QAAA;CACA","file":"articleList.vue","sourcesContent":["<template>\n    <article>\n        <aside>\n            <h2>文章列表</h2>\n            <ul>\n                <li :class=\"{ 'active' : current === $index }\" @click=\"choice($index)\" v-for=\"el in arts\"><a>{{el.title}}</a></li>\n            </ul>\n        </aside>\n        <section>\n            <header @click=\"detail\">编辑</header>\n            {{{decodeURIComponent(content)}}}\n        </section>\n    </article>\n</template>\n<style scoped>\n    article {\n        background: #fff;\n        border-radius: 5px;\n        display: flex;\n    }\n    aside {\n        padding: 15px 0;\n        flex: 1;\n    }\n    aside h2 {\n        text-align: center;\n        padding:0 0 10px;\n        border-bottom: 1px solid #ccc;\n    }\n    aside li {\n        color: #333;\n        padding:10px;\n        cursor: pointer;\n    }\n    aside li.active {\n        background: #F0F3F1;\n\n    }\n    section {\n        padding: 15px 25px;\n        border-left: 1px solid #ccc;\n        flex: 4;\n    }\n</style>\n<script>\n    import prism from 'prismjs';\n    export default{\n        data(){\n            return {\n                arts : null,\n                content : null,\n                current : 0,\n                detailId : ''\n            }\n        },\n        route: {\n            data() {\n                this.$http.get('/kodo/article/list')\n                    .then(function(ret) {\n                        this.arts = ret.data.arts;\n                        this.detailId = ret.data.arts[0]._id;\n                        this.content = ret.data.arts[0].content;\n                    });\n            }\n        },\n        ready() {\n            setTimeout(function() {\n                prism.highlightAll(false);\n            },50)\n        },\n        methods : {\n            choice(idx) {\n                this.content = this.arts[idx].content;\n                this.current = idx;\n                this.detailId = this.arts[idx]._id;\n                setTimeout(function() {\n                    prism.highlightAll(false);\n                },0)\n            },\n            detail() {\n                this.$http.get('/kodo/article/detail/id/' + this.detailId)\n                        .then(function(ret) {\n                            console.log(ret.data);\n                        })\n            }\n        }\n    }\n</script>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\narticle[_v-c04e6376] {\n    background: #fff;\n    border-radius: 5px;\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n}\naside[_v-c04e6376] {\n    padding: 15px 0;\n    -webkit-box-flex: 1;\n    -webkit-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\naside h2[_v-c04e6376] {\n    text-align: center;\n    padding:0 0 10px;\n    border-bottom: 1px solid #ccc;\n}\naside li[_v-c04e6376] {\n    color: #333;\n    padding:10px;\n    cursor: pointer;\n}\naside li.active[_v-c04e6376] {\n    background: #F0F3F1;\n\n}\nsection[_v-c04e6376] {\n    padding: 15px 25px;\n    border-left: 1px solid #ccc;\n    -webkit-box-flex: 4;\n    -webkit-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n}\n", "", {"version":3,"sources":["/./source/views/kodo/articleList.vue?4b773715"],"names":[],"mappings":";AAeA;IACA,iBAAA;IACA,mBAAA;IACA,qBAAA;IAAA,sBAAA;IAAA,qBAAA;IAAA,cAAA;CACA;AACA;IACA,gBAAA;IACA,oBAAA;IAAA,gBAAA;QAAA,YAAA;YAAA,QAAA;CACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,8BAAA;CACA;AACA;IACA,YAAA;IACA,aAAA;IACA,gBAAA;CACA;AACA;IACA,oBAAA;;CAEA;AACA;IACA,mBAAA;IACA,4BAAA;IACA,oBAAA;IAAA,gBAAA;QAAA,YAAA;YAAA,QAAA;CACA","file":"articleList.vue","sourcesContent":["<template>\n    <article>\n        <aside>\n            <h2>文章列表</h2>\n            <ul>\n                <li :class=\"{ 'active' : current === $index }\" @click=\"choice($index)\" v-for=\"el in arts\"><a>{{el.title}}</a></li>\n            </ul>\n        </aside>\n        <section>\n            <header><span @click=\"detail\">编辑</span><span @click=\"delete\">删除</span></header>\n            {{{decodeURIComponent(content)}}}\n        </section>\n    </article>\n</template>\n<style scoped>\n    article {\n        background: #fff;\n        border-radius: 5px;\n        display: flex;\n    }\n    aside {\n        padding: 15px 0;\n        flex: 1;\n    }\n    aside h2 {\n        text-align: center;\n        padding:0 0 10px;\n        border-bottom: 1px solid #ccc;\n    }\n    aside li {\n        color: #333;\n        padding:10px;\n        cursor: pointer;\n    }\n    aside li.active {\n        background: #F0F3F1;\n\n    }\n    section {\n        padding: 15px 25px;\n        border-left: 1px solid #ccc;\n        flex: 4;\n    }\n</style>\n<script>\n    import prism from 'prismjs';\n    export default{\n        data(){\n            return {\n                arts : null,\n                content : null,\n                current : 0,\n                detailId : ''\n            }\n        },\n        route: {\n            data() {\n                this.$http.get('/kodo/article/list')\n                    .then(function(ret) {\n                        this.arts = ret.data.arts;\n                        this.detailId = ret.data.arts[0]._id;\n                        this.content = ret.data.arts[0].content;\n                    });\n            }\n        },\n        ready() {\n            setTimeout(function() {\n                prism.highlightAll(false);\n            },50)\n        },\n        methods : {\n            choice(idx) {\n                this.content = this.arts[idx].content;\n                this.current = idx;\n                this.detailId = this.arts[idx]._id;\n                setTimeout(function() {\n                    prism.highlightAll(false);\n                },0)\n            },\n            detail() {\n                this.$route.router.go('/admin/update/' + this.detailId);\n            },\n            delete() {\n                if(!confirm('确认删除吗?')) return;\n                this.$http.post(\"/kodo/article/delete\",{\n                    id : this.detailId\n                }).then(function(ret) {\n                    window.location.reload()\n                })\n            }\n        }\n    }\n</script>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -1245,9 +1251,9 @@ webpackJsonp([6],{
 /***/ 102:
 /***/ function(module, exports) {
 
-	module.exports = "\n<article _v-c04e6376=\"\">\n    <aside _v-c04e6376=\"\">\n        <h2 _v-c04e6376=\"\">文章列表</h2>\n        <ul _v-c04e6376=\"\">\n            <li :class=\"{ 'active' : current === $index }\" @click=\"choice($index)\" v-for=\"el in arts\" _v-c04e6376=\"\"><a _v-c04e6376=\"\">{{el.title}}</a></li>\n        </ul>\n    </aside>\n    <section _v-c04e6376=\"\">\n        <header @click=\"detail\" _v-c04e6376=\"\">编辑</header>\n        {{{decodeURIComponent(content)}}}\n    </section>\n</article>\n";
+	module.exports = "\n<article _v-c04e6376=\"\">\n    <aside _v-c04e6376=\"\">\n        <h2 _v-c04e6376=\"\">文章列表</h2>\n        <ul _v-c04e6376=\"\">\n            <li :class=\"{ 'active' : current === $index }\" @click=\"choice($index)\" v-for=\"el in arts\" _v-c04e6376=\"\"><a _v-c04e6376=\"\">{{el.title}}</a></li>\n        </ul>\n    </aside>\n    <section _v-c04e6376=\"\">\n        <header _v-c04e6376=\"\"><span @click=\"detail\" _v-c04e6376=\"\">编辑</span><span @click=\"delete\" _v-c04e6376=\"\">删除</span></header>\n        {{{decodeURIComponent(content)}}}\n    </section>\n</article>\n";
 
 /***/ }
 
 });
-//# sourceMappingURL=6.js.map
+//# sourceMappingURL=19.js.map

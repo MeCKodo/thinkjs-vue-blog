@@ -7,8 +7,8 @@
             </ul>
         </aside>
         <section>
+            <header><span @click="detail">编辑</span><span @click="delete">删除</span></header>
             {{{decodeURIComponent(content)}}}
-
         </section>
     </article>
 </template>
@@ -49,7 +49,8 @@
             return {
                 arts : null,
                 content : null,
-                current : 0
+                current : 0,
+                detailId : ''
             }
         },
         route: {
@@ -57,6 +58,7 @@
                 this.$http.get('/kodo/article/list')
                     .then(function(ret) {
                         this.arts = ret.data.arts;
+                        this.detailId = ret.data.arts[0]._id;
                         this.content = ret.data.arts[0].content;
                     });
             }
@@ -70,9 +72,21 @@
             choice(idx) {
                 this.content = this.arts[idx].content;
                 this.current = idx;
+                this.detailId = this.arts[idx]._id;
                 setTimeout(function() {
                     prism.highlightAll(false);
                 },0)
+            },
+            detail() {
+                this.$route.router.go('/admin/update/' + this.detailId);
+            },
+            delete() {
+                if(!confirm('确认删除吗?')) return;
+                this.$http.post("/kodo/article/delete",{
+                    id : this.detailId
+                }).then(function(ret) {
+                    window.location.reload()
+                })
             }
         }
     }

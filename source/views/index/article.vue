@@ -41,19 +41,11 @@
             }
         },
         route : {
-            data (transiton) {
-                $.ajax({
-                    url : "/index/article/?id=" + this.$route.params.id,
-                    success(ret) {
-                        transiton.next({
-                            article : ret
-                        })
-                    },
-                    error() {
-//                        alert('网络异常');
-//                        window.location.reload();
-                    }
-                });
+            data () {
+                this.$http.get('/index/article/id/' + this.$route.params.id)
+                    .then(function(ret) {
+                        this.article = ret.data
+                    });
             }
         },
         ready(){
