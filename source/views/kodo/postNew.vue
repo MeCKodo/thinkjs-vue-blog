@@ -146,7 +146,7 @@
         components:{
             
         }
-    } 
+    }
     function update(v,id) {
         v.$http.post("/kodo/article/update",{
             id : id,

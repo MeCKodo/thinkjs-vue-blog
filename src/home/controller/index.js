@@ -12,7 +12,9 @@ export default class extends Base {
         // await this.session(); 测试清除登入session
         article.map(x => {
             x.content = encodeURIComponent(marked(decodeURIComponent(x.content)));
-            x.badges = JSON.parse(x.badges);
+            if(think.isArray(x.badges)) {
+                x.badges = JSON.parse(x.badges);
+            }
         });
         this.assign({article: JSON.stringify(article)});
         return this.display();
@@ -22,7 +24,9 @@ export default class extends Base {
         let id = this.get('id');
         let detail = await this.model('article').where({_id: id}).find();
         detail.content = encodeURIComponent(marked(decodeURIComponent(detail.content)));
-        detail.badges = JSON.parse(detail.badges);
+        if(think.isArray(detail.badges)) {
+            detail.badges = JSON.parse(detail.badges);
+        }
         return this.json(detail);
     }
 
