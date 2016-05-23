@@ -1,7 +1,7 @@
 <template>
     <div>
         <my-aside></my-aside>
-        <router-view style="padding: 30px 0 0 80px" class="view" transition="page" transition-mode="out-in"></router-view>
+        <router-view style="margin: 30px 25px 0 80px" class="view" transition="page" transition-mode="out-in"></router-view>
     </div>
 </template>
 <style>

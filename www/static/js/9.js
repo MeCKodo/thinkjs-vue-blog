@@ -430,10 +430,8 @@ webpackJsonp([9],{
 	    },
 	    ready: function ready() {
 	        setTimeout(function () {
-	            _prismjs2.default.highlightAll(false, function () {
-	                console.log('ok');
-	            });
-	            console.log(_prismjs2.default);
+	            //直接刷新页面无法渲染,未知
+	            _prismjs2.default.highlightAll(false);
 	        }, 50);
 	    },
 	

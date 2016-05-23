@@ -57,11 +57,8 @@
             }
         },
         ready(){
-            setTimeout(function() {
-                prism.highlightAll(false,function() {
-                    console.log('ok')
-                });
-                console.log(prism);
+            setTimeout(function() { //直接刷新页面无法渲染,未知
+                prism.highlightAll(false);
             },50)
 
         },

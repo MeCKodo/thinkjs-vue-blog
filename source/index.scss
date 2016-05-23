@@ -195,6 +195,13 @@ body {
     color: #777;
     border-left: 4px solid #ddd;
   }
+  code {
+    padding: 2px 4px;
+    color: #c7254e;
+    background-color: #f8f8f8;
+    white-space: nowrap;
+    border-radius: 0;
+  }
 }
 
 //代码高亮
@@ -271,6 +278,8 @@ pre[class*="language-"] {
 .token.doctype,
 .token.cdata {
   color: slategray;
+  word-break: break-all;
+  white-space: normal;
 }
 
 .token.punctuation {

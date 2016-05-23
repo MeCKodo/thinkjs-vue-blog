@@ -224,6 +224,13 @@ body {
   color: #777;
   border-left: 4px solid #ddd; }
 
+.article code {
+  padding: 2px 4px;
+  color: #c7254e;
+  background-color: #f8f8f8;
+  white-space: nowrap;
+  border-radius: 0; }
+
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
@@ -285,7 +292,9 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: slategray; }
+  color: slategray;
+  word-break: break-all;
+  white-space: normal; }
 
 .token.punctuation {
   color: #999; }
